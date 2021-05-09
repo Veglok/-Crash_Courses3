@@ -9,9 +9,9 @@ public class HeaderPageBL {
         headerPage = new HeaderPage();
     }
 
-    public HeaderPageBL inputSearchData() {
+    public HeaderPageBL inputSearchData(String searchPhrase) {
         headerPage.getSearchField().clear();
-        headerPage.getSearchField().sendKeys("canon");
+        headerPage.getSearchField().sendKeys(searchPhrase);
         return this;
     }
 

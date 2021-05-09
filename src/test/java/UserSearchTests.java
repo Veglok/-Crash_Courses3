@@ -11,7 +11,7 @@ public class UserSearchTests extends BaseTest {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
         SearchPageBL searchPageBL = mainPageBL.getHeaderPageBL()
-                .inputSearchData()
+                .inputSearchData("canon")
                 .clickOnSearchButton();
         searchPageBL.verifyUserSearchSuccess();
     }
@@ -20,8 +20,9 @@ public class UserSearchTests extends BaseTest {
     public void SearchWithInvalidParameters() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        SearchPageBL searchPageBL = mainPageBL.getSearchPageBL()
-                .FailSearchProduct();
+        SearchPageBL searchPageBL = mainPageBL.getHeaderPageBL()
+                .inputSearchData("hgfjhj")
+                .clickOnSearchButton();
         searchPageBL.verifyUserSearchFail();
 
     }
@@ -30,40 +31,40 @@ public class UserSearchTests extends BaseTest {
     public void SearchByDescription() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        SearchPageBL searchPageBL = mainPageBL.getSearchPageBL()
+        SearchPageBL searchPageBL = mainPageBL.getHeaderPageBL()
                 .clickOnSearchButton()
                 .SearchByDescription();
-            .verifyUserSearchByDescription();
+        searchPageBL.verifyUserSearchByDescription();
     }
 
     @Test
     public void SearchByCategories() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        SearchPageBL searchPageBL = mainPageBL.getSearchPageBL()
+        SearchPageBL searchPageBL = mainPageBL.getHeaderPageBL()
                 .clickOnSearchButton()
                 .SearchByCategories();
-            .verifyUserSearchSuccess();
+        searchPageBL.verifyUserSearchSuccess();
     }
 
     @Test
     public void SearchByWrongDescription() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        SearchPageBL searchPageBL = mainPageBL.getSearchPageBL()
+        SearchPageBL searchPageBL = mainPageBL.getHeaderPageBL()
                 .clickOnSearchButton()
                 .SearchByWrongDescription();
-            .verifyUserSearchFail();
+        searchPageBL.verifyUserSearchFail();
     }
 
     @Test
     public void SearchByWrongCategories() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
-        SearchPageBL searchPageBL = mainPageBL.getSearchPageBL()
+        SearchPageBL searchPageBL = mainPageBL.getHeaderPageBL()
                 .clickOnSearchButton()
                 .SearchByWrongCategories();
-            .verifyUserSearchFail();
+        searchPageBL.verifyUserSearchFail();
     }
 }
 

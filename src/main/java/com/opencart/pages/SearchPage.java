@@ -8,58 +8,56 @@ import org.openqa.selenium.support.ui.Select;
 public class SearchPage extends BasePage {
 
     @FindBy(id = "input-search")
-    private WebElement SearchInput;
+    private WebElement searchInput;
 
     @FindBy(name = "category_id")
-    private WebElement CategoriesChoice;
+    private WebElement categoriesChoice;
 
     @FindBy(xpath = ".//*[contains(@name,'sub_category')]")
-    private WebElement SubcategoriesBox;
+    private WebElement subcategoriesBox;
 
     @FindBy(xpath = ".//*[contains(@name,'description')]")
-    private WebElement DescriptionBox;
+    private WebElement descriptionBox;
 
     @FindBy(id = "button-search")
-    private WebElement SearchButton;
+    private WebElement searchButton;
 
     @FindBy(xpath = ".//div[@class='caption']/h4/a[text()='Canon EOS 5D']")
-    private WebElement SuccessSearch;
+    private WebElement successSearch;
 
     @FindBy(xpath = ".//*[text()='There is no product that matches the search criteria.']")
-    private WebElement FailSearch;
+    private WebElement failSearch;
 
     @FindBy(xpath = ".//div[@class='caption']/h4/a[text()='iPhone']")
-    private WebElement SuccessSearchByDescription;
+    private WebElement successSearchByDescription;
 
     public WebElement getSearchInput() {
-        return SearchInput;
+        return searchInput;
     }
 
-    public WebElement getCategoriesChoice() {
-        Select category = new Select(driver.findElement(By.name("category_id")));
-        category.selectByVisibleText("Cameras");
-        return CategoriesChoice;
+    public Select getCategoriesChoice() {
+       return new Select(driver.findElement(By.name("category_id")));
     }
 
    public WebElement getSubcategoriesBox() {
-        return SubcategoriesBox;
+        return subcategoriesBox;
     }
 
     public WebElement getDescriptionBox() {
-        return DescriptionBox;
+        return descriptionBox;
     }
 
     public WebElement getSearchButton() {
-        return SearchButton;
+        return searchButton;
     }
 
     public WebElement getSuccessSearch() {
-        return SuccessSearch;
+        return successSearch;
     }
 
     public WebElement getFailSearch() {
-        return FailSearch;
+        return failSearch;
     }
 
-    public WebElement getSuccessSearchByDescription() {return SuccessSearchByDescription;}
+    public WebElement getSuccessSearchByDescription() {return successSearchByDescription;}
 }
