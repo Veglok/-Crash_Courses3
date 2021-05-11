@@ -11,21 +11,21 @@ public class SearchPageBL {
         searchPage = new SearchPage();
     }
 
-    public SearchPageBL SearchByDescription() {
+    public SearchPageBL searchByDescription() {
         inputSearch("new mobile phone");
         clickOnDescriptionBox();
         clickOnSearchButton();
         return this;
     }
 
-    public SearchPageBL SearchByWrongDescription() {
+    public SearchPageBL searchByWrongDescription() {
         inputSearch("ghkfhg");
         clickOnDescriptionBox();
         clickOnSearchButton();
         return this;
     }
 
-    public SearchPageBL SearchByCategories() {
+    public SearchPageBL searchByCategories() {
         inputSearch("canon");
         selectCategoriesChoice("Cameras");
         clickOnSubcategoriesBox();
@@ -33,7 +33,7 @@ public class SearchPageBL {
         return this;
     }
 
-    public SearchPageBL SearchByWrongCategories() {
+    public SearchPageBL searchByWrongCategories() {
         inputSearch("canon");
         selectCategoriesChoice("Tablets");
         clickOnSubcategoriesBox();
